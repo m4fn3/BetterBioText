@@ -26,13 +26,14 @@ const BetterBioText: Plugin = {
                         source: CopyIcon
                     })
                 }
-                for (const obj of res.props.children) {
+                res.props.children.forEach((obj, idx) => {
                     if (obj?.props?.accessibilityRole === "link") {
                         let link = obj.props.children[0]
-                        obj.props.onPress = () => {
+                        // NOTE: it doesn't work with obj ... = ...
+                        res.props.children[idx].props.onPress = () => {
                             Linking.openURL(link)
                         }
-                        obj.props.onLongPress = () => {
+                        res.props.children[idx].props.onLongPress = () => {
                             Clipboard.setString(link)
                             Toasts.open({
                                 content: `Copied URL to clipboard`,
@@ -40,13 +41,14 @@ const BetterBioText: Plugin = {
                             })
                         }
                     }
-                }
+                })
             })
         })
     },
     onStop() {
         Patcher.unpatchAll()
-    },
+    }
+    ,
     getSettingsPanel({settings}) {
         return <Settings settings={settings}/>
     }
