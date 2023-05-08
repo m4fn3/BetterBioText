@@ -1,0 +1,12 @@
+{
+   "name": "BetterBioText",
+   "version": "1.0.0",
+   "description": "adds some extra actions like copying on Long press, clicking on press",
+   "authors": [
+      {
+         "name": "mafu",
+         "id": "519760564755365888"
+      }
+   ],
+   "color": "#ffc0cb"
+}
