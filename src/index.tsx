@@ -5,8 +5,8 @@ import {create} from 'enmity/patcher'
 import manifest, {name as plugin_name} from '../manifest.json'
 import Settings from "./components/Settings"
 import {getByName} from "enmity/metro"
-import {getByProps} from "enmity/modules";
-import {getIDByName} from "enmity/api/assets";
+import {getByProps} from "enmity/modules"
+import {getIDByName} from "enmity/api/assets"
 
 const Patcher = create('BetterBioText')
 
