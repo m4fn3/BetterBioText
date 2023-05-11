@@ -19,12 +19,14 @@ const BetterBioText: Plugin = {
     onStart() {
         BioTexts.forEach((BioText) => {
             Patcher.after(BioText, "default", (self, args, res) => {
-                res.props.onLongPress = () => {
-                    Clipboard.setString(args[0].bio)
-                    Toasts.open({
-                        content: `Copied bio text to clipboard`,
-                        source: CopyIcon
-                    })
+                if (!args[0].hasOwnProperty("placeholder")) { // exclude own profile editing view
+                    res.props.onLongPress = () => {
+                        Clipboard.setString(args[0].bio)
+                        Toasts.open({
+                            content: `Copied bio text to clipboard`,
+                            source: CopyIcon
+                        })
+                    }
                 }
                 res.props.children.forEach((obj, idx) => {
                     if (obj?.props?.accessibilityRole === "link") {

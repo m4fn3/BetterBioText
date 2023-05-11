@@ -1,7 +1,7 @@
 {
    "name": "BetterBioText",
-   "version": "1.0.0",
-   "description": "adds some extra actions like copying on Long press, clicking on press",
+   "version": "1.0.1",
+   "description": "adds some extra actions like copying on Long press, opening a link",
    "authors": [
       {
          "name": "mafu",
